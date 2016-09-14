@@ -1,6 +1,8 @@
 package com.learnwithash.everythingandroid;
 
+import android.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -9,14 +11,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
+import com.learnwithash.everythingandroid.Features.SwipeToRefreshFragment;
 
 /**
  *
  */
-public class NavigationDrawerActivity extends AppCompatActivity{
+public class NavigationDrawerActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
+    private Fragment mFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,13 +34,16 @@ public class NavigationDrawerActivity extends AppCompatActivity{
 
     private void initializeViews(){
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_container);
-        //TODO: Enable navigation view once, drawer item(s) have been implemented
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_container);
-//        navigationView.setNavigationItemSelectedListener(this);
         enableToolbar();
         enabledHomeButton();
         enabledHamBurgerIcon();
+        navDrawerItemClickHandler();
 
+    }
+
+    private void navDrawerItemClickHandler() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView_container);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     private void enableToolbar() {
@@ -86,5 +96,26 @@ public class NavigationDrawerActivity extends AppCompatActivity{
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch(item.getItemId()){
+            case R.id.nav_item_swipeToRefresh:
+                mFragment = new SwipeToRefreshFragment();
+                Toast.makeText(NavigationDrawerActivity.this, item.getTitle().toString()
+                        + " selected", Toast.LENGTH_SHORT).show();
+                getFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+                        mFragment)
+                .commit();
+                break;
+
+            case R.id.nav_fingerPrint_scanner:
+                Toast.makeText(NavigationDrawerActivity.this, item.getTitle().toString()
+                        +" selected", Toast.LENGTH_SHORT).show();
+        }
+        mDrawerLayout.closeDrawers();
+        return false;
     }
 }

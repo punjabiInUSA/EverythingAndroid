@@ -8,7 +8,9 @@
 
     <item android:title="More items">
         <menu>
-            <item android:title="next item" />
+            <item
+                android:id="@+id/nav_fingerPrint_scanner"
+                android:title="FingerPrint Scanner" />
 
             <item android:title="future item" />
 

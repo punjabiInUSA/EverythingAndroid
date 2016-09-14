@@ -21,9 +21,10 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HELLO FROM DEFAULT VIEW"/>
+<FrameLayout
+    android:id="@+id/frameLayout_container"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"/>
 
 </LinearLayout>
