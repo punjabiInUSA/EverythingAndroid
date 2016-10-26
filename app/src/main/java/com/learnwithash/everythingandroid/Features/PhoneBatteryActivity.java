@@ -67,11 +67,27 @@ public class PhoneBatteryActivity extends AppCompatActivity {
         mBatteryText.setText("Battery: " + level + "%");
 
         if(level == 100){
-            mBatteryIcon.setImageResource(R.drawable.battery);
+            mBatteryIcon.setImageResource(R.drawable.battery_full);
         } else if(level < 100 && level >=90){
             mBatteryIcon.setImageResource(R.drawable.battery_90);
-        } else if(level <=50){
+        }else if(level < 90 && level >=80){
+            mBatteryIcon.setImageResource(R.drawable.battery_80);
+        }else if(level < 80 && level >=70){
+            mBatteryIcon.setImageResource(R.drawable.battery_70);
+        }else if(level < 70 && level >=60){
+            mBatteryIcon.setImageResource(R.drawable.battery_60);
+        }else if(level < 60 && level >=50){
             mBatteryIcon.setImageResource(R.drawable.battery_50);
+        }else if(level < 50 && level >=40){
+            mBatteryIcon.setImageResource(R.drawable.battery_40);
+        }else if(level < 40 && level >=30){
+            mBatteryIcon.setImageResource(R.drawable.battery_30);
+        }else if(level < 30 && level >=20){
+            mBatteryIcon.setImageResource(R.drawable.battery_20);
+        }else if(level < 20 && level >=10){
+            mBatteryIcon.setImageResource(R.drawable.battery_10);
+        } else{
+            mBatteryIcon.setImageResource(R.drawable.battery_zero);
         }
     }
 }
