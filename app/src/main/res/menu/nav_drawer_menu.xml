@@ -12,7 +12,9 @@
                 android:id="@+id/nav_fingerPrint_scanner"
                 android:title="FingerPrint Scanner" />
 
-            <item android:title="future item" />
+            <item
+                android:id="@+id/nav_phone_battery"
+                android:title="Phone Battery" />
 
         </menu>
     </item>
