@@ -35,7 +35,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
     private void initializeViews(){
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_container);
         enableToolbar();
-        enabledHomeButton();
+        enableUpButton();
         enabledHamBurgerIcon();
         navDrawerItemClickHandler();
 
@@ -52,7 +52,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
     }
 
 
-    private void enabledHomeButton(){
+    private void enableUpButton(){
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeButtonEnabled(true);
