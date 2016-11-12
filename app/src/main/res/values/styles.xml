@@ -10,4 +10,18 @@
 
     <style name="AppTheme.AppbarOverlay" parent="ThemeOverlay.AppCompat.ActionBar"/>
 
+    <style name="NavigationPrimaryButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textSize">23sp</item>
+        <item name="android:background">@color/nav_button_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:text">Next</item>
+    </style>
+
+    <style name="NavigationSecondaryButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textSize">23sp</item>
+        <item name="android:background">@color/nav_button_secondary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:text">Cancel</item>
+    </style>
+
 </resources>

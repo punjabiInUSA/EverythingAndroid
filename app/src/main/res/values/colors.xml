@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#FFFDE7</color>
+    <color name="nav_button_primary">#4174df</color>
+    <color name="nav_button_secondary">#1f3669</color>
+
 </resources>
