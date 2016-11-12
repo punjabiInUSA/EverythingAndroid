@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.learnwithash.everythingandroid.Features.PhoneBatteryActivity;
+import com.learnwithash.everythingandroid.Features.SnackBarFragment;
 import com.learnwithash.everythingandroid.Features.SwipeToRefreshFragment;
 import com.learnwithash.everythingandroid.Features.ToastFragment;
 
@@ -106,17 +107,12 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         switch(item.getItemId()){
             case R.id.nav_item_swipeToRefresh:
-                mFragment = new SwipeToRefreshFragment();
-                Toast.makeText(NavigationDrawerActivity.this, item.getTitle().toString()
-                        + " selected", Toast.LENGTH_SHORT).show();
-                getFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
-                        mFragment)
-                .commit();
+                requestedFragment(new SwipeToRefreshFragment());
                 break;
 
             case R.id.nav_fingerPrint_scanner:
                 Toast.makeText(NavigationDrawerActivity.this, item.getTitle().toString()
-                        +" selected", Toast.LENGTH_SHORT).show();
+                        +" coming soon", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nav_phone_battery:
@@ -127,14 +123,20 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_toast_messages:
-                mFragment = new ToastFragment();
-                getFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
-                        mFragment).commit();
+                requestedFragment(new ToastFragment());
+                break;
+            case R.id.nav_snack_bar:
+                requestedFragment(new SnackBarFragment());
                 break;
 
         }
         mDrawerLayout.closeDrawers();
         return false;
+    }
+
+    public void requestedFragment(Fragment navigateToFragment){
+        getFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+                navigateToFragment).commit();
     }
 
     }

@@ -32,7 +32,7 @@ public class ToastFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        mView = inflater.inflate(R.layout.frag_toast_messages, container, false);
+        mView = inflater.inflate(R.layout.frag_toast_message_layout, container, false);
         init();
         return mView;
     }

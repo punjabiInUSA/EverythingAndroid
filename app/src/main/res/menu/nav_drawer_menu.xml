@@ -20,6 +20,10 @@
                 android:id="@+id/nav_toast_messages"
                 android:title="Toast Messages" />
 
+            <item
+                android:id="@+id/nav_snack_bar"
+                android:title="SnackBar" />
+
         </menu>
     </item>
 </menu>
