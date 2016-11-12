@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.learnwithash.everythingandroid.Features.PhoneBatteryActivity;
 import com.learnwithash.everythingandroid.Features.SwipeToRefreshFragment;
+import com.learnwithash.everythingandroid.Features.ToastFragment;
 
 /**
  *
@@ -124,6 +125,13 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 Toast.makeText(NavigationDrawerActivity.this, item.getTitle().toString()
                         + " selected", Toast.LENGTH_SHORT).show();
                 break;
+
+            case R.id.nav_toast_messages:
+                mFragment = new ToastFragment();
+                getFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
+                        mFragment).commit();
+                break;
+
         }
         mDrawerLayout.closeDrawers();
         return false;

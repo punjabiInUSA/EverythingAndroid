@@ -31,7 +31,6 @@ public class PhoneBatteryActivity extends AppCompatActivity {
         setContentView(R.layout.frag_phone_battery);
         mBatteryText = (TextView) findViewById(R.id.tv_battery);
         mBatteryIcon = (ImageView) findViewById(R.id.iv_battery);
-
         mRunnable = new Runnable() {
             @Override
             public void run() {
