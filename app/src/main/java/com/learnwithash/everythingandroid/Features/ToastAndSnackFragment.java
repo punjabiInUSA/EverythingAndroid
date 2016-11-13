@@ -77,6 +77,7 @@ public class ToastAndSnackFragment extends BaseFragment implements View.OnClickL
         aD.setMessage("No radio button option was selected" + "\n \n Note: Short and long apply to " +
                 "snack bar options at the bottom of the screen as well");
         aD.setTitle("SELECT OPTION");
+        aD.setCancelable(false);
         aD.setButton(DialogInterface.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
