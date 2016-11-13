@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.learnwithash.everythingandroid.Features.NotificationsActivity;
 import com.learnwithash.everythingandroid.Features.PhoneBatteryActivity;
 import com.learnwithash.everythingandroid.Features.SnackBarFragment;
 import com.learnwithash.everythingandroid.Features.SwipeToRefreshFragment;
@@ -116,14 +117,17 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_phone_battery:
-                Intent launchActivity = new Intent(this,PhoneBatteryActivity.class);
-                startActivity(launchActivity);
+                launchActivity(PhoneBatteryActivity.class);
                 Toast.makeText(NavigationDrawerActivity.this, item.getTitle().toString()
                         + " selected", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nav_toast_messages_snack_bar:
                 requestedFragment(new ToastAndSnackFragment());
+                break;
+
+            case R.id.nav_notify:
+                launchActivity(NotificationsActivity.class);
                 break;
 
         }
@@ -134,6 +138,11 @@ public class NavigationDrawerActivity extends AppCompatActivity
     public void requestedFragment(Fragment navigateToFragment){
         getFragmentManager().beginTransaction().replace(R.id.frameLayout_container,
                 navigateToFragment).commit();
+    }
+
+    public void launchActivity(Class className){
+        Intent newActivity = new Intent(this, className);
+        startActivity(newActivity);
     }
 
     }

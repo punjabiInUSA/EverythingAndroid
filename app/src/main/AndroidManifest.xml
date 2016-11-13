@@ -21,6 +21,11 @@
         <activity android:name=".Features.PhoneBatteryActivity"
             android:launchMode="singleTask"/>
 
+        <activity android:name=".Features.NotificationsActivity"
+            android:launchMode="singleTask"/>
+
+        <activity android:name=".Features.NotificationResultActivity"
+            android:launchMode="singleTask"/>
 
     </application>
 
