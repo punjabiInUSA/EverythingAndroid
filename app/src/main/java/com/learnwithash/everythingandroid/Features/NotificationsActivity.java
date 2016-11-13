@@ -37,6 +37,9 @@ public class NotificationsActivity extends AppCompatActivity implements View.OnC
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 
         Intent intent = new Intent(this, NotificationResultActivity.class);
+        //Notification icon stays when open through action button. It would go away with putExtra
+        //Line below.
+        intent.putExtra("notifyID", NOTIFY_ID);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, NOTIFY_ID, intent,
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
