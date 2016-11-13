@@ -78,6 +78,9 @@ public class NotificationsActivity extends AppCompatActivity implements View.OnC
         builder.addAction(R.mipmap.ic_launcher,"Action 1", pendingIntent);
         builder.addAction(R.mipmap.ic_launcher,"Action 2", pendingIntent);
 
+        //Displaying notification on the lockscreen
+        builder.setVisibility(Notification.VISIBILITY_PRIVATE);
+
 
         //Finally display notification
         Notification notify = builder.build();
