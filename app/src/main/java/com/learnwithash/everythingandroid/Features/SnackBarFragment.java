@@ -24,7 +24,7 @@ public class SnackBarFragment extends BaseFragment implements View.OnClickListen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
          super.onCreateView(inflater, container, savedInstanceState);
-         mView = inflater.inflate(R.layout.frag_snack_menu_layout, container, false);
+//         mView = inflater.inflate(R.layout.frag_snack_menu_layout, container, false);
          init();
          return mView;
     }

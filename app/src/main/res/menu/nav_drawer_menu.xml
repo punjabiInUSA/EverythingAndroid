@@ -17,12 +17,8 @@
                 android:title="Phone Battery" />
 
             <item
-                android:id="@+id/nav_toast_messages"
-                android:title="Toast Messages" />
-
-            <item
-                android:id="@+id/nav_snack_bar"
-                android:title="SnackBar" />
+                android:id="@+id/nav_toast_messages_snack_bar"
+                android:title="Toast &amp; SnackBar" />
 
         </menu>
     </item>
