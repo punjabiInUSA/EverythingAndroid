@@ -3,5 +3,5 @@
     <string name="nav_drawer_header_icon">NavigationDrawer Header Icon</string>
     <string name="open_drawer_tag">open drawer</string>
     <string name="close_drawer_tag">close drawer</string>
-    <string name="snack_behavior"></string>
+    <string name="snack_behavior">com.learnwithash.everythingandroid.Features.SnackBarMoveBehavior</string>
 </resources>
