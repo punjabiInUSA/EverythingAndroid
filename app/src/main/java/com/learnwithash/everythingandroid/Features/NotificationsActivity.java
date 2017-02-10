@@ -62,21 +62,21 @@ public class NotificationsActivity extends AppCompatActivity implements View.OnC
         //Adding a content intent
         builder.setContentIntent(pendingIntent);
 
-        NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
-        bigTextStyle.setBigContentTitle("This is a big notification");
-        bigTextStyle.bigText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
-                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, " +
-                "when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
-                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. " +
-                "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages," +
-                " and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
-
-        builder.setStyle(bigTextStyle);
+//        NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
+//        bigTextStyle.setBigContentTitle("This is a big notification");
+//        bigTextStyle.bigText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. " +
+//                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, " +
+//                "when an unknown printer took a galley of type and scrambled it to make a type specimen book. " +
+//                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. " +
+//                "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages," +
+//                " and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+//
+//        builder.setStyle(bigTextStyle);
 
 
         //Adding action button on the notification
-        builder.addAction(R.mipmap.ic_launcher,"Action 1", pendingIntent);
-        builder.addAction(R.mipmap.ic_launcher,"Action 2", pendingIntent);
+//        builder.addAction(R.mipmap.ic_launcher,"Action 1", pendingIntent);
+//        builder.addAction(R.mipmap.ic_launcher,"Action 2", pendingIntent);
 
         //Displaying notification on the lockscreen
         builder.setVisibility(Notification.VISIBILITY_PRIVATE);

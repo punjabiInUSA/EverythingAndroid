@@ -27,6 +27,9 @@
         <activity android:name=".Features.NotificationResultActivity"
             android:launchMode="singleTask"/>
 
+        <activity android:name=".Features.AnimationActivity"
+            android:launchMode="singleTask"/>
+
     </application>
 
 </manifest>

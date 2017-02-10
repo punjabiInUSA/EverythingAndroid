@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.learnwithash.everythingandroid.Features.AnimationActivity;
 import com.learnwithash.everythingandroid.Features.NotificationsActivity;
 import com.learnwithash.everythingandroid.Features.PhoneBatteryActivity;
 import com.learnwithash.everythingandroid.Features.SnackBarFragment;
@@ -128,6 +129,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
             case R.id.nav_notify:
                 launchActivity(NotificationsActivity.class);
+                break;
+
+            case R.id.nav_anim:
+                launchActivity(AnimationActivity.class);
                 break;
 
         }

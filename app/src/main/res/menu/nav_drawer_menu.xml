@@ -23,6 +23,10 @@
             <item
                 android:id="@+id/nav_notify"
                 android:title="Notifications" />
+
+            <item
+                android:id="@+id/nav_anim"
+                android:title="Animation" />
         </menu>
     </item>
 </menu>
