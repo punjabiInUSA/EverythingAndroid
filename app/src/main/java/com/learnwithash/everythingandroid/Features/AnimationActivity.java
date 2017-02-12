@@ -18,7 +18,7 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
 
     private TextView mNumber,mSubtext1, mSubText2;
     private Button mButton;
-    private Animation mFadeInAnimation, mSubFadeIn;
+    private Animation mFadeInAnimation;
 
 
     @Override
@@ -27,11 +27,11 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
         switch(view.getId()) {
             case R.id.button1:
                 mNumber.setVisibility(View.VISIBLE);
-                mNumber.startAnimation(mFadeInAnimation);
                 int temp = Integer.parseInt(mNumber.getText().toString());
                 int result = temp + 1;
                 String abc = String.valueOf(result);
                 mNumber.setText(abc);
+                mNumber.startAnimation(mFadeInAnimation);
                 mSubText2.startAnimation(mFadeInAnimation);
                 mSubtext1.startAnimation(mFadeInAnimation);
                 break;
@@ -48,7 +48,6 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
         mSubText2 = (TextView) findViewById(R.id.subText2);
         mButton = (Button) findViewById(R.id.button1);
         mFadeInAnimation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
-        mSubFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_subtext);
         mButton.setOnClickListener(this);
     }
 }

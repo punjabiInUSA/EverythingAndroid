@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +27,8 @@ public class PhoneBatteryActivity extends AppCompatActivity {
     private Runnable mRunnable;
     private Handler mHandler;
 
+    private Animation mLowBatteryAnimation;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +44,8 @@ public class PhoneBatteryActivity extends AppCompatActivity {
             }
         };
 
-
+        mLowBatteryAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.low_battery_animation);
         mHandler = new Handler();
         mHandler.postDelayed(mRunnable, 0);
     }
@@ -64,7 +69,7 @@ public class PhoneBatteryActivity extends AppCompatActivity {
     public void updateBatteryInfo(){
         int level = (int) batteryLevel();
         mBatteryText.setText("Battery: " + level + "%");
-
+        mBatteryIcon.clearAnimation();
         if(level == 100){
             mBatteryIcon.setImageResource(R.drawable.battery_full);
         } else if(level < 100 && level >=90){
@@ -87,6 +92,7 @@ public class PhoneBatteryActivity extends AppCompatActivity {
             mBatteryIcon.setImageResource(R.drawable.battery_10);
         } else{
             mBatteryIcon.setImageResource(R.drawable.battery_zero);
+            mBatteryIcon.setAnimation(mLowBatteryAnimation);
         }
     }
 }
