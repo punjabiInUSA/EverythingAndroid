@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="key_category_language"
+        android:summary="Choose a language below"
+        android:title="Language" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="key_english"
+        android:title="English" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="key_hindi"
+        android:title="Hindi" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="key_telugu"
+        android:title="Telugu" />
+</PreferenceScreen>

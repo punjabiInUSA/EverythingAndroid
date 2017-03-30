@@ -6,6 +6,7 @@ import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -20,7 +21,6 @@ import com.learnwithash.everythingandroid.R;
  */
 public class PhoneBatteryActivity extends AppCompatActivity {
 
-    private View mView;
     private TextView mBatteryText;
     private ImageView mBatteryIcon;
 
@@ -48,6 +48,12 @@ public class PhoneBatteryActivity extends AppCompatActivity {
                 R.anim.low_battery_animation);
         mHandler = new Handler();
         mHandler.postDelayed(mRunnable, 0);
+
+        if(getSupportActionBar() != null){
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        }
     }
 
     public float batteryLevel(){
@@ -95,4 +101,6 @@ public class PhoneBatteryActivity extends AppCompatActivity {
             mBatteryIcon.setAnimation(mLowBatteryAnimation);
         }
     }
+
+
 }
