@@ -84,7 +84,9 @@ public class ToastAndSnackFragment extends BaseFragment implements View.OnClickL
                 dialogInterface.dismiss();
             }
         });
+        if(aD != null) {
         aD.show();
+        }
     }
 
     private void regularToast() {
