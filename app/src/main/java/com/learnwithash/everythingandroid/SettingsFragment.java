@@ -2,9 +2,11 @@ package com.learnwithash.everythingandroid;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 
 import com.learnwithash.everythingandroid.Features.NotificationsActivity;
 import com.learnwithash.everythingandroid.Features.PhoneBatteryActivity;
@@ -22,17 +24,19 @@ public class SettingsFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
-        setEnglishPreference();
-        setHindiPreference();
-        setTeluguPreference();
+//        setEnglishPreference();
+//        setHindiPreference();
+//        setTeluguPreference();
+
+
 
     }
 
     public void setEnglishPreference() {
         Preference myPref = findPreference("key_english");
-        myPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        myPref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
-            public boolean onPreferenceClick(Preference preference) {
+            public boolean onPreferenceChange(Preference preference, Object o) {
                 replaceFragment(new ToastAndSnackFragment());
                 return false;
             }
